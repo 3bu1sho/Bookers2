@@ -1,4 +1,4 @@
-
+    <main>
     
     <div class="container px-5 px-sm-0"></div>
 <div class="row">
@@ -49,20 +49,21 @@
         </tr>
         </thead>
         
-        <% @books.each do |book| %>
+        <% @users.each do |user| %>
     <tr>
         <td>
-        <%= attachment_image_tag book.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %>
+        <%= attachment_image_tag user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %>
         </td>
 
         <td>
-            <%= link_to book.title, book_path(book) %>
+            <%= user.name %>
         </td>
         <td>
-            <%= book.body %>
+            <%= link_to "show", user_path(user) %>
         </td>
     </tr>
         <% end %>
     </table>
         
 </div>
+    </main>
