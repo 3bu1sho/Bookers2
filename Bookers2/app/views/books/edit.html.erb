@@ -1,6 +1,14 @@
     <main>
 <div class="col-md-9 offset-md-3">
+  
+<% if @book.errors.any? %>
+  <p><%= @book.errors.count %>件のerrorが発生しました</p>
+  <% @book.errors.full_messages.each do |message| %>
+    <p><%= message %></p>
+  <% end %>
+<% end %>
 
+  <h1>Editing Book</h1>
   <h1>Book detail</h1>
 <%= form_with model:@book, local:true do |f| %>
   <h4>Title</h4>
