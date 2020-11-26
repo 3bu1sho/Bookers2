@@ -9,7 +9,7 @@ class User < ApplicationRecord
     
     validates :name, presence: true
     validates :name, uniqueness: true
-    validates :name,    length: { maximum: 20 }
-    validates :name,    length: { minimum: 2 } 
-    validates :introduction,    length: { maximum: 50 }
+    validates :name, length: { maximum: 20 }
+    validates :name, length: { minimum: 2 } 
+    validates :introduction, length: { maximum: 50 }
 end
